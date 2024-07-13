@@ -54,6 +54,7 @@ select {
 
 /* Font size */
 input,
+textarea,
 button {
   font-size: 16px;
 }
@@ -65,5 +66,10 @@ img {
 
 
 button {
-  -webkit-tap-highlight-color: #eee;
+  -webkit-tap-highlight-color: #ddd;
+}
+
+
+textarea {
+  font-family: inherit;
 }
