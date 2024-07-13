@@ -1,58 +1,58 @@
 * {
-	margin: 0;
-	border: 0;
-	padding: 0;
+  margin: 0;
+  border: 0;
+  padding: 0;
 
-	// Reset box model
-	box-sizing: border-box;
+  /* Reset box model */
+  box-sizing: border-box;
 
-	// No outline
-	outline: none;
-	-webkit-tap-highlight-color: transparent;
+  /* No outline */
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 
-	// No bg
-	background: transparent;
+  /* No bg */
+  background: transparent;
 
-	// No radius
-	border-radius: 0;
+  /* No radius */
+  border-radius: 0;
 
-	// No other ios
-	-webkit-appearance: none;
+  /* No other ios */
+  -webkit-appearance: none;
 }
 
 
-// Inline block
+/* Inline block */
 a,
 button,
 input,
 img,
 span {
-	display: inline-block;
+  display: inline-block;
 }
 
 
-// Pointer
+/* Pointer */
 button,
 a,
 select {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 
-// User select
+/* User select */
 button {
-	user-select: none;
+  user-select: none;
 }
 
 
-// Color
+/* Color */
 button,
 select {
   color: black;
 }
 
 
-// Font size
+/* Font size */
 input,
 button {
   font-size: 16px;
@@ -60,11 +60,10 @@ button {
 
 
 img {
-	display: block;
+  display: block;
 }
 
 
 button {
-	-webkit-tap-highlight-color: #eee;
+  -webkit-tap-highlight-color: #eee;
 }
-
