@@ -45,6 +45,8 @@ GF.meta = (theme_color) => {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="${theme_color}">
+    <link rel="icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/app.css">
   `
