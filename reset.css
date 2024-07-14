@@ -32,6 +32,7 @@ span {
 
 
 /* Pointer */
+input[type="file"],
 button,
 a,
 select {
