@@ -25,13 +25,13 @@ function res(int $code, string $msg = "", string $data = "") {
     $arr["data"] = $data;
 
     echo json_encode($arr);
+
     exit();
 }
 
 
 function conn($db, $pass) {
-    $conn = new mysqli("localhost", "root", $pass, $db);
-    $conn->connect_error and res(1, DB_CONN_FAILED);
+    $conn = new mysqli("localhost", "root", $pass, $db) or res(1, DB_CONN_FAILED);
     return $conn;
 }
 
