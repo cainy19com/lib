@@ -51,10 +51,7 @@ function get_post() {
   $json_str = file_get_contents("php://input");
   $json_obj = json_decode($json_str);
   $json_arr = json_decode($json_str, true);
-
-  foreach ($json_arr as $k => $v)
-    $json_arr[$k] = trim($v);
-
+  $json_arr = array_map("trim", $json_arr);
   return $json_arr;
 }
 
