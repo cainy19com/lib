@@ -39,7 +39,7 @@ GF.url_search_params = () => {
 }
 
 
-GF.meta = (theme_color="", title="") => {
+GF.meta = (theme_color = "", title = "") => {
   document.head.innerHTML = `
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,8 +50,6 @@ GF.meta = (theme_color="", title="") => {
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/app.css">
-    <script src="js/lib.js"></script>
-    <script src="js/app.js"></script>
   `
 }
 
