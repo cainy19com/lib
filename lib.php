@@ -14,7 +14,7 @@ define("NO_SERVICE", "Service unavailable, please try again later");
 
 define("DB_CONN_FAILED", "DB connection failed");
 define("QUERY_FAILED",   "Query failed");
-define("UPDATE_WITH_SAME_VALUE", "Trying to update with same value?");
+define("UPDATE_WITH_SAME_VALUE", "Trying to update with same value");
 
 
 function res(int $code, string $msg = "", string $data = "") {
