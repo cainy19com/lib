@@ -33,7 +33,8 @@ function res(int $code, string $msg = "", string $data = "")
 
 function conn($db, $pass)
 {
-  $conn = new mysqli("localhost", "root", $pass, $db) or res(1, DB_CONN_FAILED);
+  $conn = new mysqli("localhost", "root", $pass, $db);
+  $conn or res(1, DB_CONN_FAILED);
   return $conn;
 }
 
