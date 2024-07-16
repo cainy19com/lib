@@ -41,7 +41,16 @@ function conn($db, $pass)
 function is_logged_in()
 {
   session_start();
-  return $_SESSION["id"] ? true : false;
+
+  if ($_SESSION["id"])
+    return true;
+
+  if ($_COOKIE["id"]) {
+    $_SESSION["id"] = $_COOKIE["id"];
+    return true;
+  }
+
+  return false;
 }
 
 
