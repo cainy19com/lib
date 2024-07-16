@@ -39,19 +39,7 @@ GF.url_search_params = () => {
 }
 
 
-GF.meta = (theme_color = "", title = "") => {
-  document.head.innerHTML = `
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="theme-color" content="${theme_color}">
-    <title>${title}</title>
-    <link rel="icon" href="favicon.ico">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/app.css">
-  `
-}
+GF.set_theme_color = color => $(`meta[name="theme-color"]`).content = color
 
 
 GF.is_iphone = () => {
