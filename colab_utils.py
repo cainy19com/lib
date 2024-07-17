@@ -220,13 +220,12 @@ class CBStop(K.callbacks.Callback):
     self.check()
 
 
-def con_cur_dl(urls, workers=30):
+def con_cur_dl(urls, dir="xxx", workers=30):
   """
   inp: set, list
-  out: xxx dir
   """
 
-  os.mkdir("xxx")
+  os.mkdir(dir)
 
   urls = list(set(urls))
   urls = [url.strip() for url in urls]
@@ -238,7 +237,7 @@ def con_cur_dl(urls, workers=30):
 
   def dl(index, url):
     r = requests.get(url, allow_redirects=True)
-    f = open(f"xxx/{index + 1}", "wb")
+    f = open(f"{dir}/{index + 1}", "wb")
     f.write(r.content)
     f.close()
     dled.append(index) # list append thread safe
@@ -259,7 +258,7 @@ def con_cur_dl(urls, workers=30):
     pool = None
 
   time.sleep(10) # wait for the last batch
-  print("file dl ed:", len(os.listdir("xxx")))
+  print("file dl ed:", len(os.listdir(dir)))
 
 
 def mv_num_file(num, src, dst):
