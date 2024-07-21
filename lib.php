@@ -61,6 +61,12 @@ function echo_pre($str)
 }
 
 
+function get_get()
+{
+  return array_map("trim", $_GET);
+}
+
+
 function get_post()
 {
   $json_str = file_get_contents("php://input");
