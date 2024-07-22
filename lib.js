@@ -11,6 +11,10 @@ const $$ = document.querySelectorAll.bind(document)
 const LOG = console.log.bind(console)
 
 
+const QS  = (se, el=document) => el.querySelector(se)
+const QSA = (se, el=document) => el.querySelectorAll(se)
+
+
 const GV = {} // Global variables
 const GF = {} // Global functions
 const GC = {} // Global classes
