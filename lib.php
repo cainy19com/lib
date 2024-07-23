@@ -73,3 +73,15 @@ function get_post()
   $json_arr = array_map("trim", $json_arr);
   return $json_arr;
 }
+
+
+function bytes_to_kb($bytes, $round)
+{
+  return round($bytes / 1024, $round);
+}
+
+
+function bytes_to_mb($bytes, $round)
+{
+  return round($bytes / 1024 / 1024, $round);
+}
