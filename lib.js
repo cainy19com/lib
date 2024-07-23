@@ -49,3 +49,14 @@ GF.set_theme_color = color => $(`meta[name="theme-color"]`).content = color
 GF.is_iphone = () => {
   return /iphone/i.test(window.navigator.userAgent)
 }
+
+
+GF.bytes_to_kb = (bytes, round) => {
+  return parseFloat(bytes / 1024).toFixed(round)
+}
+
+
+GF.bytes_to_mb = (bytes, round) => {
+  return parseFloat(bytes / 1024 / 1024).toFixed(round)
+}
+
