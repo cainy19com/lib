@@ -69,3 +69,8 @@ img {
 textarea {
   font-family: inherit;
 }
+
+
+body {
+  font-family: -apple-system;
+}
