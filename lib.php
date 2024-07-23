@@ -33,8 +33,7 @@ function res(int $code, string $msg = "", string $data = "")
 
 function conn($db, $pass)
 {
-  $conn = new mysqli("localhost", "root", $pass, $db);
-  $conn or res(1, DB_CONN_FAILED);
+  $conn = new mysqli("localhost", "root", $pass, $db) or res(1, DB_CONN_FAILED);
   return $conn;
 }
 
@@ -68,20 +67,18 @@ function get_get()
 function get_post()
 {
   $json_str = file_get_contents("php://input");
-  $json_obj = json_decode($json_str);
   $json_arr = json_decode($json_str, true);
-  $json_arr = array_map("trim", $json_arr);
-  return $json_arr;
+  return array_map("trim", $json_arr);
 }
 
 
-function bytes_to_kb($bytes, $round)
+function b_to_kb($bytes, $round)
 {
   return round($bytes / 1024, $round);
 }
 
 
-function bytes_to_mb($bytes, $round)
+function b_to_mb($bytes, $round)
 {
   return round($bytes / 1024 / 1024, $round);
 }
