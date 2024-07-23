@@ -41,8 +41,6 @@ function conn($db, $pass)
 
 function is_logged_in()
 {
-  session_start();
-
   if ($_SESSION["id"])
     return true;
 
