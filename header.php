@@ -11,6 +11,7 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/app.css">
+  <script src="js/pubsub.min.js"></script>
   <script src="js/lib.js"></script>
   <script src="js/app.js"></script>
 </head>
