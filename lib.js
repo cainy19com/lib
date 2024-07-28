@@ -58,11 +58,19 @@ GF.is_iphone = () => {
 
 
 GF.b_to_kb = (bytes, round) => {
-  return parseFloat(bytes / 1024).toFixed(round)
+  const kb = bytes / 1024
+  const ro = kb.toFixed(round)
+  if (ro < kb)
+    ro = (ro + 1 / 10 ** round).toFixed(round)
+  return ro
 }
 
 
 GF.b_to_mb = (bytes, round) => {
-  return parseFloat(bytes / 1024 / 1024).toFixed(round)
+  const mb = bytes / 1024 / 1024
+  const ro = mb.toFixed(round)
+  if (ro < mb)
+    ro = (ro + 1 / 10 ** round).toFixed(round)
+  return ro
 }
 
