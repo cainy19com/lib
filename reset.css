@@ -67,6 +67,11 @@ img {
 }
 
 
+a {
+  text-decoration: none;
+}
+
+
 textarea {
   font-family: inherit;
 }
