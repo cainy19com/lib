@@ -58,19 +58,24 @@ GF.is_iphone = () => {
 
 
 GF.b_to_kb = (bytes, round) => {
+  // File size should be >= original after conversion & rounding
+  // Note that "toFixed" returns string
+  // ret: num
   const kb = bytes / 1024
-  const ro = kb.toFixed(round)
-  if (ro < kb)
-    ro = (ro + 1 / 10 ** round).toFixed(round)
-  return ro
+  const ro = parseFloat(kb.toFixed(round))
+  if (ro >= kb)
+    return ro
+  else
+    return parseFloat((ro + 1 / 10 ** round).toFixed(round))
 }
 
 
 GF.b_to_mb = (bytes, round) => {
-  const mb = bytes / 1024 / 1024
-  const ro = mb.toFixed(round)
-  if (ro < mb)
-    ro = (ro + 1 / 10 ** round).toFixed(round)
-  return ro
+  const mb = bytes / 1048576
+  const ro = parseFloat(mb.toFixed(round))
+  if (ro >= mb)
+    return ro
+  else
+    return parseFloat((ro + 1 / 10 ** round).toFixed(round))
 }
 
