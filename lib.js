@@ -80,7 +80,7 @@ GF.b_to_mb = (bytes, round) => {
 }
 
 
-GF.tap_highlight = async el => {
+GF.tap_highlight = async (el, duration=100) => {
   // 
   const rect = el.getBoundingClientRect()
 
@@ -105,8 +105,8 @@ GF.tap_highlight = async el => {
   el.prepend(canvas)
 
   // Wait animation,
-  // otherwise timeout may be delayed way more than 100
-  await new Promise(_ => setTimeout(() => { canvas.remove() }, 100))
+  // otherwise timeout may be delayed way more than duration
+  await new Promise(_ => setTimeout(() => { canvas.remove() }, duration))
 }
 
 
