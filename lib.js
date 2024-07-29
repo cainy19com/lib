@@ -42,7 +42,8 @@ GF.fetch = (api_url, json_data) => {
 }
 
 
-GF.get_search_params = key => {
+GF.get_search_param = key => {
+  // Get single search param by key
   return new URL(window.location.href).searchParams.get(key)
 }
 
