@@ -79,3 +79,43 @@ GF.b_to_mb = (bytes, round) => {
     return parseFloat((ro + 1 / 10 ** round).toFixed(round))
 }
 
+
+GF.tap_highlight = async el => {
+  // 
+  const rect = el.getBoundingClientRect()
+
+  const canvas = document.createElement("canvas")
+  const ctx = canvas.getContext("2d")
+
+  // 
+  canvas.width = rect.width
+  canvas.height = rect.height
+
+  canvas.style.position = "absolute"
+  canvas.style.top = 0
+  canvas.style.left = 0
+  canvas.style.zIndex = -1
+
+  // 
+  ctx.fillStyle = "#eee"
+  ctx.fillRect(0, 0, canvas.width, canvas.height)
+
+  // Requires el position not static
+  el.style.position = "relative" // TODO
+  el.prepend(canvas)
+
+  // Wait animation,
+  // otherwise timeout may be delayed way more than 100
+  await new Promise(_ => setTimeout(() => { canvas.remove() }, 100))
+}
+
+
+GF.update_search_params = (key, value) => {
+  const url = new URL(window.location.href)
+
+  url.searchParams.set(key, value)
+
+  history.pushState(null, "", url)
+  window.dispatchEvent(new Event("popstate")) // TODO
+}
+
