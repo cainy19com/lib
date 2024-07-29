@@ -110,10 +110,15 @@ GF.tap_highlight = async el => {
 }
 
 
-GF.update_search_params = (key, value) => {
+GF.update_search_params = pairs => {
+  /*
+  input: a list of key-value pairs, [["", ""], [], ...]
+  */
   const url = new URL(window.location.href)
 
-  url.searchParams.set(key, value)
+  pairs.forEach(pair => {
+    url.searchParams.set(...pair)
+  })
 
   history.pushState(null, "", url)
   window.dispatchEvent(new Event("popstate")) // TODO
