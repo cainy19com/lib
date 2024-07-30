@@ -110,7 +110,7 @@ GF.tap_highlight = async (el, color="#eee", duration=100) => {
   await new Promise((res, rej) => {
     setTimeout(() => {
       // DOM update may be async, f like "alert" will pause the rm
-      canvas.clearRect(0, 0, canvas.width, canvas.height)
+      ctx.clearRect(0, 0, canvas.width, canvas.height)
       canvas.remove()
       setTimeout(() => res(), 0) // Ain't enough
     }, duration)
