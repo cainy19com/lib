@@ -81,7 +81,7 @@ GF.b_to_mb = (bytes, round) => {
 }
 
 
-GF.tap_highlight = async (el, duration=100) => {
+GF.tap_highlight = async (el, color="#eee", duration=100) => {
   // 
   const rect = el.getBoundingClientRect()
 
@@ -98,7 +98,7 @@ GF.tap_highlight = async (el, duration=100) => {
   canvas.style.zIndex = -1
 
   // 
-  ctx.fillStyle = "#eee"
+  ctx.fillStyle = color
   ctx.fillRect(0, 0, canvas.width, canvas.height)
 
   // Requires el position not static
