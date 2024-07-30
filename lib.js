@@ -107,7 +107,10 @@ GF.tap_highlight = async (el, color="#eee", duration=100) => {
 
   // Wait animation,
   // otherwise timeout may be delayed way more than duration
-  await new Promise(_ => setTimeout(() => { canvas.remove() }, duration))
+  await new Promise((res, rej) => {
+    setTimeout(() => { canvas.remove() }, duration)
+    res()
+  })
 }
 
 
