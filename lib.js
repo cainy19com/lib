@@ -81,10 +81,11 @@ GF.b_to_mb = (bytes, round) => {
 }
 
 
-GF.tap_highlight = async (el, color="#eee", duration=100) => {
+GF.tap_highlight = async (el, color = "#eee", duration = 100) => {
   // 
   const rect = el.getBoundingClientRect()
 
+  // 
   const canvas = document.createElement("canvas")
   const ctx = canvas.getContext("2d")
 
@@ -95,7 +96,6 @@ GF.tap_highlight = async (el, color="#eee", duration=100) => {
   canvas.style.position = "absolute"
   canvas.style.top = 0
   canvas.style.left = 0
-  canvas.style.zIndex = -1
 
   // 
   ctx.fillStyle = color
@@ -105,8 +105,7 @@ GF.tap_highlight = async (el, color="#eee", duration=100) => {
   el.style.position = "relative" // TODO
   el.prepend(canvas)
 
-  // Wait animation,
-  // otherwise timeout may be delayed way more than duration
+  // 
   await new Promise((res, rej) => {
     setTimeout(() => {
       // DOM update may be async, f like "alert" will pause the rm
