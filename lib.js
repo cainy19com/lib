@@ -81,7 +81,7 @@ GF.b_to_mb = (bytes, round) => {
 }
 
 
-GF.tap_highlight = async (el, color = "#eee", duration = 100) => {
+GF.tap_highlight = async (el, color = "#eee", duration = 50) => {
   // 
   const rect = el.getBoundingClientRect()
 
