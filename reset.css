@@ -77,6 +77,11 @@ textarea {
 }
 
 
+table {
+  border-collapse: collapse;
+}
+
+
 body {
   font-family: -apple-system;
 }
