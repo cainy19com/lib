@@ -81,7 +81,16 @@ GF.b_to_mb = (bytes, round) => {
 }
 
 
-GF.tap_highlight = async (el, color = "#eee", duration = 50) => {
+GF.tap_highlight = async ({
+  el = null,
+  color = "#eee",
+  duration = 50,
+  zIndex = -1 } = {}) => {
+  /*
+  For cases when z-index doesn't work,
+  el has to use an inner span with position relative
+  */
+
   // 
   const rect = el.getBoundingClientRect()
 
@@ -96,6 +105,7 @@ GF.tap_highlight = async (el, color = "#eee", duration = 50) => {
   canvas.style.position = "absolute"
   canvas.style.top = 0
   canvas.style.left = 0
+  canvas.style.zIndex = zIndex
 
   // 
   ctx.fillStyle = color
